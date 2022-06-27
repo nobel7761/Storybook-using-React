@@ -40,3 +40,9 @@ Small.args = {
   label: "Button",
   backgroundColor: "red",
 };
+
+export const ReuseArgsFromAnotherStory = Template.bind({});
+ReuseArgsFromAnotherStory.args = {
+  ...Small.args,
+  label: "Args from another story",
+};
