@@ -1,22 +1,23 @@
+//default imports here
 import React from "react";
-
 import { Button } from "./Button";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+//two types of export
+
+//default export
 export default {
-  title: "Example/Button",
-  component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
+  title: "Example/Button", //mandatory
+  component: Button, // optional! importing component here
   argTypes: {
     backgroundColor: { control: "color" },
   },
 };
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template = (args) => <Button {...args} />;
 
+//named export! each named export represents a story!
+
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
   primary: true,
   label: "Button",

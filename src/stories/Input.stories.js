@@ -23,5 +23,3 @@ Number.args = {
   type: "number",
   placeholder: "number",
 };
-
-Email.storyName = "Email Input";
