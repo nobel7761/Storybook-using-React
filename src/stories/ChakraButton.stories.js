@@ -4,7 +4,23 @@ import { Button } from "@chakra-ui/react";
 export default {
   title: "Chakra/Button",
   component: Button,
+  argTypes: {
+    backgroundColor: { control: "text" },
+    children: { control: "text" },
+    onClick: { action: "clicked" },
+  },
 };
 
-export const Success = () => <Button variantColor="green">Success</Button>;
-export const Danger = () => <Button variantColor="red">Danger</Button>;
+const Template = (args) => <Button {...args} />;
+
+export const Success = Template.bind({});
+Success.args = {
+  backgroundColor: "green",
+  children: "Success",
+};
+
+export const Danger = Template.bind({});
+Danger.args = {
+  backgroundColor: "red",
+  children: "Danger",
+};
