@@ -1,6 +1,7 @@
 //default imports here
 import React from "react";
 import { Button } from "./Button";
+import Center from "../components/Center/Center";
 
 //two types of export
 
@@ -14,6 +15,7 @@ export default {
   args: {
     label: "Args from Component",
   },
+  decorators: [(story) => <Center>{story()}</Center>],
 };
 
 const Template = (args) => <Button {...args} />;
