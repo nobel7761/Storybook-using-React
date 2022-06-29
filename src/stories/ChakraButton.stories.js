@@ -18,3 +18,12 @@ export const Danger = () => (
     Danger
   </Button>
 );
+
+export const Log = () => (
+  <Button
+    backgroundColor="gray"
+    onClick={() => console.log("Button Clicked", process.env.STORYBOOK_THEME)}
+  >
+    Log
+  </Button>
+);

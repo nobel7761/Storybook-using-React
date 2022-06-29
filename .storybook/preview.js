@@ -1,8 +1,11 @@
 import React from "react";
-/* import { addDecorator } from "@storybook/react";
-import Center from "../src/components/Center/Center"; */
+import { addDecorator, addParameters } from "@storybook/react";
+/* import Center from "../src/components/Center/Center"; */
 
 import { ThemeProvider, theme, CSSReset, Box } from "@chakra-ui/react";
+import { withConsole } from "@storybook/addon-console";
+import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { withA11y } from "@storybook/addon-a11y";
 
 // addDecorator((story) => <Center>{story()}</Center>);
 
@@ -32,3 +35,11 @@ export const decorators = [
     </ThemeProvider>
   ),
 ];
+
+addDecorator((storyFn, context) => withConsole()(storyFn)(context));
+addParameters({
+  viewport: {
+    viewport: INITIAL_VIEWPORTS,
+  },
+});
+addDecorator(withA11y);
